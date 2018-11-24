@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+Kolegov/\.vs/
+
+Kolegov/base/Debug/
+
+Kolegov/base_test/Debug/
+
+Kolegov/Debug/
+
+Kolegov/gtest/Debug/
