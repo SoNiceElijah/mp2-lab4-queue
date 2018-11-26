@@ -31,7 +31,10 @@ public:
 		  throw "Queue full";
 
 	  top++;
-	  pMem[top] = elem;
+	  for (int i = top; i > 0; i--)
+		  pMem[i] = pMem[i - 1];
+
+	  pMem[0] = elem;
   }
   T Shift()
   {
@@ -39,7 +42,7 @@ public:
 		  throw "Queue empty";
 
 	  top--;
-	  return pMem[0];
+	  return pMem[top + 1];
   }
 
   T Check() 
@@ -52,6 +55,7 @@ public:
 
   int IsEmpty(void) const { return top == -1; }
   int IsFull(void) const { return top == size - 1; }
+  int Count() { return top + 1; };
 };
 
 #endif
